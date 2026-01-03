@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { BackButton } from './BackButton';
@@ -32,9 +33,16 @@ const MobileHeader = ({ showBackButton = false }: MobileHeaderProps) => {
       <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
         <Link
           href='/'
-          className='text-2xl font-bold text-green-600 tracking-tight hover:opacity-80 transition-opacity'
+          className='flex items-center justify-center hover:opacity-80 transition-opacity'
         >
-          {siteName}
+          <Image
+            src='/icons/ZinhoLogo.png'
+            alt={siteName}
+            width={100}
+            height={32}
+            className='object-contain h-8 w-auto'
+            priority
+          />
         </Link>
       </div>
     </header>

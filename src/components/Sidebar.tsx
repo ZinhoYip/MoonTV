@@ -3,6 +3,7 @@
 'use client';
 
 import { Clover, Film, Home, Menu, Search, Star, Tv } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import {
@@ -34,9 +35,14 @@ const Logo = () => {
       href='/'
       className='flex items-center justify-center h-16 select-none hover:opacity-80 transition-opacity duration-200'
     >
-      <span className='text-2xl font-bold text-green-600 tracking-tight'>
-        {siteName}
-      </span>
+      <Image
+        src='/icons/ZinhoLogo.png'
+        alt={siteName}
+        width={120}
+        height={40}
+        className='object-contain h-10 w-auto'
+        priority
+      />
     </Link>
   );
 };
